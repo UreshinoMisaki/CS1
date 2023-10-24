@@ -8,12 +8,12 @@ class TopController < ApplicationController
   end
   
   def login
-    logger.debug params[:uid]
+    #logger.debug params[:uid]
     if params[:uid] == "kindai" and params[:pass]== "sanriko"
-      session[:login_uid] = params [:uid]
+      session[:login_uid] = params[:uid]
       redirect_to top_main_path
     else
-    render 'error'
+      render "error"
     end
   end
 end
